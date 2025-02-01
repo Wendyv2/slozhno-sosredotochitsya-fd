@@ -188,12 +188,12 @@
   outline: none;
 }
 
-.link:hover {
-  text-decoration: underline;
-}
-
 .link:focus-visible {
   outline: 1px solid var(--text-color, #f1b2ce);
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 .section__how-container {
@@ -329,7 +329,7 @@
 }
 
 @media (width >= 1024px) {
-  
+
   .decorated-zone {
     block-size: max(768px, 100vh);
   }
@@ -341,7 +341,7 @@
 
   .header__theme-menu-list {
     flex-flow: row wrap;
-    justify-self: center;
+    justify-content: center;
   }
 
   .why {

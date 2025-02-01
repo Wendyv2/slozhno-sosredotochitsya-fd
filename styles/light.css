@@ -18,6 +18,7 @@
   --subtitle-text-color: #353430;
   --nav-hover-color: rgba(50, 49, 45, 0.4);
   --bg-image: url(../images/cover-image-light.png);
+  --bg-color: #FFF1F7;
 }
 
 .theme-light .page {
@@ -60,7 +61,7 @@
 }
 
 @media (prefers-color-scheme: light) {
-  
+
   :root {
     /* Дублируем переменные светлой темы */
     --main-title-color: #ffc2e6;
@@ -72,6 +73,7 @@
     --title-accent-color: #353430;
     --subtitle-text-color: #353430;
     --bg-image: url(../images/cover-image-light.png);
+    --bg-color: #FFF1F7;
   }
 
   .theme-auto .header-decor {

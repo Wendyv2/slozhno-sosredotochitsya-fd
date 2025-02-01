@@ -2,4 +2,366 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--bg-image-dark-theme);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+.header,
+.gallery {
+  margin-block-end: 40px;
+}
+
+.decorated-zone,
+.content {
+  padding-inline: 10px;
+}
+
+.decorated-zone {
+  display: grid;
+  position: relative;
+  block-size: max(668px, 100vh);
+  inline-size: 100%;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  right: 11px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-top: 1px solid var(--accent-color, #ff0070);
+  border-right: 1px solid var(--accent-color, #ff0070);
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  inline-size: 25px;
+  block-size: 25px;
+  border-bottom: 1px solid var(--accent-color, #ff0070);
+  border-left: 1px solid var(--accent-color, #ff0070);
+}
+
+.header__theme-menu {
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10px;
+  align-content: flex-end;
+  align-items: center;
+}
+
+.header__theme-menu-item {
+  line-height: 1;
+  padding-block: 2px;
+}
+
+.header__theme-menu-button {
+  color: var(--accent-color, #ff0070);
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color, #ff0070);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid rgba(255, 0, 112, 0.4);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color, #ff0070);
+  pointer-events: none;
+  padding: 2px 13px 4px;
+}
+
+.title {
+  color: var(--main-title-color, #db00ff);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+}
+
+.title-decor {
+  color: var(--title-text-color, #000028);
+  background-color: var(--accent-color, #ff0070);
+  font-size: inherit;
+  line-height: inherit;
+  align-self: start;
+  inline-size: 100%;
+}
+
+.title-decor:first-of-type {
+  align-self: center;
+}
+
+.header-decor__dark-theme {
+  position: absolute;
+  justify-self: end;
+}
+
+.header-decor__dark-theme::before {
+  content: 'rec';
+  position: absolute;
+  top: 10px;
+  right: 38px;
+  color: var(--accent-color, #ff0070);
+  text-transform: uppercase;
+}
+
+.header-decor__dark-theme::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  right: 19.5px;
+  display: block;
+  border-radius: 50%;
+  inline-size: 0.5rem;
+  block-size: 0.5rem;
+  background-color: var(--accent-color, #ff0070);
+  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+}
+
+.section {
+  display: grid;
+  gap: 20px;
+}
+
+.accent-subtitle {
+  color: var(--accent-color, #ff0070);
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.list {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
+}
+
+.article {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 10px;
+}
+
+.main-text {
+  color: var(--text-color, #f1b2ce);
+  line-height: inherit;
+}
+
+.link {
+  color: var(--text-color, #f1b2ce);
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+  text-decoration: none;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--text-color, #f1b2ce);
+}
+
+.section__how-container {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 20px;
+}
+
+.advice-title {
+  font-weight: normal;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.image {
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.footer {
+  align-items: center;
+  text-align: center;
+  padding-block-end: 10px;
+}
+
+@media (width >= 768px) {
+
+  .header {
+    gap: 0;
+  }
+
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header .title-decor {
+    justify-self: end;
+    inline-size: 49%;
+  }
+
+  .decorated-zone {
+    block-size: max(1024px, 100vh);
+    padding-inline: 0 20px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .header-decor__dark-theme::before {
+    top: 20px;
+    right: 49px;
+  }
+
+  .header-decor__dark-theme::after {
+    top: 28px;
+    right: 30px;
+    box-shadow: 0 0 4px 3px var(--accent-color, #ff0070);
+  }
+
+  .header__theme-menu {
+    align-self: center;
+  }
+
+  .header,
+  .gallery {
+    margin-block-end: 60px;
+  }
+
+  .content {
+    gap: 80px;
+    padding-inline: 20px;
+  }
+
+  .why {
+    grid-template-columns: 236px 1fr;
+  }
+
+  .what .accent-subtitle {
+    max-inline-size: 236px;
+  }
+
+  .how {
+    grid-template-columns: 236px 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery .title-decor {
+    grid-column: 1 / -1;
+  }
+
+  .image:nth-child(1) {
+    grid-column: span 2;
+  }
+
+  .image:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .image:nth-child(3) {
+    grid-row: span 2;
+  }
+
+  .image:nth-child(4) {
+    grid-row: span 2;
+  }
+
+  .image:nth-child(5) {
+    grid-column: 2 / auto;
+  }
+
+  .image:nth-child(6) {
+    grid-column: span 2;
+  }
+
+  .footer {
+    padding-inline: 0;
+  }
+}
+
+@media (width >= 1024px) {
+
+  .decorated-zone {
+    block-size: max(768px, 100vh);
+  }
+
+  .header__theme-menu {
+    padding-block-start: 20px;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-flow: row wrap;
+    justify-self: center;
+  }
+
+  .header__theme-menu-button_active {
+    padding: 2px 13px;
+  }
+
+  .why {
+    grid-template-columns: 315px 1fr;
+  }
+
+  .what .accent-subtitle {
+    max-inline-size: 315px;
+  }
+
+  .list-what {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 314px);
+  }
+
+  .how {
+    grid-template-columns: 315px 1fr;
+  }
 }

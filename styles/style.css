@@ -88,11 +88,11 @@
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid var(--nav-hover-color);
+  outline: 1px solid var(--nav-hover-color);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--button-color, #ff0070);
+  outline: 1px solid var(--button-color, #ff0070);
   pointer-events: none;
   padding: 2px 13px 4px;
 }

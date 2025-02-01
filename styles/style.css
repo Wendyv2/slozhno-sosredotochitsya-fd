@@ -2,7 +2,8 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  background-image: var(--bg-image-dark-theme);
+  background-image: var(--bg-image);
+  background-color: var(--bg-color);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -37,8 +38,8 @@
   right: 11px;
   inline-size: 25px;
   block-size: 25px;
-  border-top: 1px solid var(--accent-color, #ff0070);
-  border-right: 1px solid var(--accent-color, #ff0070);
+  border-top: 1px solid var(--decor-color, #ff0070);
+  border-right: 1px solid var(--decor-color, #ff0070);
 }
 
 .decorated-zone::after {
@@ -48,8 +49,8 @@
   left: 10px;
   inline-size: 25px;
   block-size: 25px;
-  border-bottom: 1px solid var(--accent-color, #ff0070);
-  border-left: 1px solid var(--accent-color, #ff0070);
+  border-bottom: 1px solid var(--decor-color, #ff0070);
+  border-left: 1px solid var(--decor-color, #ff0070);
 }
 
 .header__theme-menu {
@@ -59,23 +60,23 @@
 .header__theme-menu-list {
   display: flex;
   flex-flow: column wrap;
-  gap: 10px;
+  gap: 2vb;
   align-content: flex-end;
   align-items: center;
 }
 
 .header__theme-menu-item {
   line-height: 1;
-  padding-block: 2px;
 }
 
 .header__theme-menu-button {
-  color: var(--accent-color, #ff0070);
+  color: var(--button-color, #ff0070);
   background-color: transparent;
   border: none;
   text-transform: lowercase;
   line-height: 1;
   cursor: pointer;
+  padding: 2px 13px 4px;
 }
 
 .header__theme-menu-button:focus {
@@ -83,15 +84,15 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color, #ff0070);
+  border-bottom: 1px solid var(--button-color, #ff0070);
 }
 
 .header__theme-menu-button:hover {
-  border: 1px solid rgba(255, 0, 112, 0.4);
+  border: 1px solid var(--nav-hover-color);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid var(--accent-color, #ff0070);
+  border: 1px solid var(--button-color, #ff0070);
   pointer-events: none;
   padding: 2px 13px 4px;
 }
@@ -103,8 +104,8 @@
   line-height: 0.825;
 }
 
-.title-decor {
-  color: var(--title-text-color, #000028);
+.title-accent {
+  color: var(--title-accent-color, #000028);
   background-color: var(--accent-color, #ff0070);
   font-size: inherit;
   line-height: inherit;
@@ -112,35 +113,35 @@
   inline-size: 100%;
 }
 
-.title-decor:first-of-type {
+.title-accent:first-of-type {
   align-self: center;
 }
 
-.header-decor__dark-theme {
+.header-decor {
   position: absolute;
   justify-self: end;
 }
 
-.header-decor__dark-theme::before {
+.header-decor::before {
   content: 'rec';
   position: absolute;
   top: 10px;
-  right: 38px;
+  right: 39px;
   color: var(--accent-color, #ff0070);
   text-transform: uppercase;
 }
 
-.header-decor__dark-theme::after {
+.header-decor::after {
   content: '';
   position: absolute;
   top: 18px;
-  right: 19.5px;
+  right: 20px;
   display: block;
   border-radius: 50%;
   inline-size: 0.5rem;
   block-size: 0.5rem;
   background-color: var(--accent-color, #ff0070);
-  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
+  box-shadow: 0 0 4px 3px var(--accent-color, #ff0070);
 }
 
 .content {
@@ -154,8 +155,8 @@
   gap: 20px;
 }
 
-.accent-subtitle {
-  color: var(--accent-color, #ff0070);
+.subtitle {
+  color: var(--subtitle-text-color, #ff0070);
   font-size: inherit;
   line-height: inherit;
 }
@@ -233,7 +234,7 @@
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .header .title-decor {
+  .header .title-accent {
     justify-self: end;
     inline-size: 49%;
   }
@@ -253,15 +254,14 @@
     left: 20px;
   }
 
-  .header-decor__dark-theme::before {
+  .header-decor::before {
     top: 20px;
     right: 49px;
   }
 
-  .header-decor__dark-theme::after {
+  .header-decor::after {
     top: 28px;
-    right: 30px;
-    box-shadow: 0 0 4px 3px var(--accent-color, #ff0070);
+    right: 29.5px;
   }
 
   .header__theme-menu {
@@ -282,7 +282,7 @@
     grid-template-columns: 236px 1fr;
   }
 
-  .what .accent-subtitle {
+  .what .subtitle {
     max-inline-size: 236px;
   }
 
@@ -295,7 +295,7 @@
     gap: 20px;
   }
 
-  .gallery .title-decor {
+  .gallery .title-accent {
     grid-column: 1 / -1;
   }
 
@@ -329,7 +329,7 @@
 }
 
 @media (width >= 1024px) {
-
+  
   .decorated-zone {
     block-size: max(768px, 100vh);
   }
@@ -344,15 +344,11 @@
     justify-self: center;
   }
 
-  .header__theme-menu-button_active {
-    padding: 2px 13px;
-  }
-
   .why {
     grid-template-columns: 315px 1fr;
   }
 
-  .what .accent-subtitle {
+  .what .subtitle {
     max-inline-size: 315px;
   }
 

@@ -5,11 +5,16 @@
 
 :root {
   --main-title-color: #db00ff;
-  --title-text-color: #000028;
+  --title-accent-color: #000028;
+  --subtitle-text-color: #ff0070;
   --text-color: #f1b2ce;
+  --button-color: #ff0070;
+  --decor-color: #ff0070;
   --accent-color: #ff0070;
+  --nav-hover-color: rgba(255, 0, 112, 0.4);
   --text-font-size: 18px;
-  --bg-image-dark-theme: url(../images/cover-image-dark.png);
+  --bg-image: url(../images/cover-image-dark.png);
+  --bg-color: #000028;
   --text-font-family: 'IBM Plex mono';
   --text-line-height: 1.3em;
 }

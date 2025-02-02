@@ -21,34 +21,10 @@
   --bg-color: #FFF1F7;
 }
 
-.theme-light .page {
-  /* Вам также нужно будет написать ряд подобных селекторов */
-  background-image: var(--bg-image);
-}
-
 .theme-light .header-decor {
   display: none;
 }
 
-.theme-light .header__theme-menu-button {
-  color: var(--button-color, #353430);
-}
-
-.theme-light .header__theme-menu-button:hover {
-  outline: 1px solid var(--nav-hover-color);
-}
-
-.theme-light .header__theme-menu-button_active {
-  outline: 1px solid var(--button-color, #353430);
-}
-
-.theme-light .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--button-color, #353430);
-}
-
-.theme-light .subtitle {
-  color: var(--subtitle-text-color, #353430);
-}
 
 @media (prefers-color-scheme: light) {
 

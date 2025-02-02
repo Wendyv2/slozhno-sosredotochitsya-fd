@@ -115,6 +115,7 @@
 
 .title-accent:first-of-type {
   align-self: center;
+  font-weight: bold;
 }
 
 .header-decor {
@@ -193,7 +194,7 @@
 }
 
 .link:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--text-color, #f1b2ce);
 }
 
 .section__how-container {
@@ -354,7 +355,8 @@
 
   .list-what {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 314px);
+    grid-template-columns: repeat(auto-fit, minmax(314px, max-content));
+    grid-auto-flow: row;
   }
 
   .how {
